@@ -83,13 +83,18 @@
 		}
 	};
 
+
+	//Actual object is created here, allowing us to 'new' an object without calling 'new'
 	Greetr.init = function (firstName, lastName, language) {
 		var self = this;
 		self.firstName = firstName || '';
 		self.lastName = lastName || '';
 		self.language = language || 'en';
+		self.validate();
 	}
 
+	//no need to use 'new', like in jQuery
 	Greetr.init.prototype = Greetr.prototype;
+	//attach our Greetr to the global object, and provide a shorthand '$G' for ease of access
 	global.Greetr = global.G$ = Greetr;
 }(window, jQuery));
