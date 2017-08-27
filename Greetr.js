@@ -1,4 +1,4 @@
-(function (global) {
+(function (global, $) {
 	var Greetr = function (firstName, lastName, language) {
 		return new Greetr.init(firstName, lastName, language);
 	}
@@ -74,4 +74,4 @@
 
 	Greetr.init.prototype = Greetr.prototype;
 	global.Greetr = global.G$ = Greetr;
-}(window));
+}(window, jQuery));
